@@ -1,0 +1,32 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+  height: 100vh;
+
+  .login-card {
+    width: 400px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .mat-form-field {
+    margin-bottom: 20px; /* Add some bottom margin between form fields */
+  }
+
+  .mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      margin: 10px;
+    }
+  }
+}
+.grid-colt1{
+  display: grid;
+  grid-template-columns: 1,1rem;
+}
+button{
+  margin: 1rem;
+}

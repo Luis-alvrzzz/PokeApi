@@ -1,0 +1,32 @@
+<div class="margin">
+
+  <mat-paginator class="negrobg" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <table class="negrobg"  mat-table [dataSource]="dataSource">
+
+  <!-- Define las columnas utilizando *ngFor -->
+  <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+    <th mat-header-cell *matHeaderCellDef>
+      {{ column.header }}
+    </th>
+ 
+    <!-- Verifica si la columna es 'img' y muestra la imagen, o muestra el contenido normal -->
+    <td mat-cell *matCellDef="let row" >
+      <ng-container *ngIf="column.columnDef === 'img'; else sino" >
+        <!-- Muestra la imagen utilizando la URL de la imagen en la propiedad 'imageUrl' del objeto 'row' -->
+        <img [src]="column.cell(row)" alt="Imagen de Pokémon" >
+      </ng-container>
+
+      <ng-template #sino>
+        <!-- Muestra el contenido normal de la columna -->
+        {{ column.cell(row) }}
+      </ng-template>
+    </td>
+  </ng-container>
+
+  <!-- Define las filas utilizando *matRowDef -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+</div>

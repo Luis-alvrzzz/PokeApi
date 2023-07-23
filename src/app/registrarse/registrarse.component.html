@@ -1,0 +1,52 @@
+
+<div class="flex">
+    <div class="m-auto">
+      <mat-card class="register-card">
+        <mat-card-title>
+          REGISTRAR USUARIO
+        </mat-card-title>
+  
+        <mat-card-content>
+          <form #registerForm="ngForm" (ngSubmit)="register()" novalidate
+          class="grid-colt1">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput type="email" name="email" placeholder="Ingresa tu email" required
+                [(ngModel)]="registerData.email" #email="ngModel" />
+              <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+                Email es requerido y debe ser una dirección de email válida.
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" name="password" placeholder="Ingresa tu contraseña" required
+                [(ngModel)]="registerData.password" #password="ngModel" />
+              <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+                La contraseña es requerida.
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <mat-label>Confirmar Contraseña</mat-label>
+              <input matInput type="password" name="confirmPassword" placeholder="Confirma tu contraseña" required
+                [(ngModel)]="registerData.confirmPassword" #confirmPassword="ngModel" />
+              <mat-error *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+                Por favor, confirma tu contraseña.
+              </mat-error>
+            </mat-form-field>
+          </form>
+        </mat-card-content>
+  
+        <mat-divider></mat-divider>
+  
+        <mat-card-actions>
+          <button (click)="registerForm.ngSubmit.emit()" color="accent" type="submit" mat-raised-button>
+            <mat-spinner *ngIf="isLoading" diameter="35"></mat-spinner>
+            <span *ngIf="!isLoading">Registrarse</span>
+          </button>
+          <button mat-raised-button color="primary" (click)="goToLogin()">Iniciar sesión</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

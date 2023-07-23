@@ -1,0 +1,84 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    overflow-x: auto;
+    width:40rem;
+  }
+
+ 
+  /* Estilos generales de la barra de desplazamiento */
+  .pagination-container::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  /* Estilos del "pulgar" de la barra de desplazamiento */
+  .pagination-container::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Color del "pulgar" */
+    border-radius: 6px; /* Radio de borde del "pulgar" */
+  }
+  
+  /* Estilos del "pulgar" de la barra de desplazamiento cuando está en hover */
+  .pagination-container::-webkit-scrollbar-thumb:hover {
+    background-color: #0050a7; /* Color del "pulgar" al hacer hover */
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-left: 151rem;
+    padding-bottom: 1rem;
+   
+  }
+
+  .pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #f2f2f2;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .pagination a.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .centrarContenido{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+  }
+
+  .example-card {
+    max-width: 10rem;
+    background-color: rgba(189, 189, 189, 0.082);
+    background-image: url('src/assets/img/pokeball azul.svg');
+    background-size: 200%;
+    background-repeat: no-repeat;
+    
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .grid-paginacion{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 11rem);
+    grid-gap: 10px;
+  }
+  .grid-paginacion a{
+    text-decoration: none;
+    }
+  mat-card-header p{
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.20rem 0.8rem;
+    
+  }

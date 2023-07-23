@@ -1,0 +1,42 @@
+
+<mat-toolbar color="secundary">
+  <div class="container" [class.open]="mostrarMenu">
+    
+    <!-- Barra lateral -->
+    <div class="sidebar">
+      <!-- Contenido del menú -->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <img [src]="imageUrl" alt="User Image" class="NomImg">
+          <div class="user-details">
+            <mat-card-title>{{valorRecibido}}</mat-card-title>
+            <mat-card-subtitle>Usuario</mat-card-subtitle>
+          </div>
+        </mat-card-header>
+      </mat-card>
+      <ul><br><br>
+        <a routerLink="/pokemon-table" routerLinkActive="active-link">Dashboard</a><br><br>
+        <img src="src/assets/img/pokeball.svg" alt="">
+        <a routerLink="/pokemon-list-component" routerLinkActive="active-link">Pokemons</a><br><br>
+        <a routerLink="/usuarios" routerLinkActive="active-link">Usuarios</a>
+        <!-- Agrega más enlaces según sea necesario -->
+      </ul>
+    </div>
+    
+    <!-- Contenido principal de la página -->
+    <div class="main-content">
+      <!-- Contenido principal de la página aquí -->
+    </div>
+  </div>
+  
+    <button  (click)="toggleMenu()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+  <span>PokeAPI</span>
+  <span class="example-spacer"></span>
+  <button routerLink="/login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>logout</mat-icon>
+  </button>
+ 
+</mat-toolbar>
